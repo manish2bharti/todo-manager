@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo List</title>
+    <link rel="stylesheet" type='text/css' href='css/styles.css' />
+    <link rel="stylesheet" href="css/jquery-ui-1.9.2.custom.min.css" type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js" type="text/javascript" charset="utf-8"></script>
+    <script src=" http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/spinejs/1.2.0/spine.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/local.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/application.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/scripts.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/x-jquery-tmpl" id="taskTemplate">
+    <div class="item {{if done}}done{{/if}}">
+      <div class="view" title="Double click to edit...">
+        <input type="checkbox" {{if done}}checked="checked"{{/if}}> 
+        <span>${name}</span> <a class="destroy"></a>
+      </div>
+      
+      <div class="edit">
+        <input type="text" value="${name}"> 
+      </div>
+    </div>
+  </script>
+</head>
+<body class="todoWrapper">
+<div id="wrapper">
+	<h1>To Do List Manager</h1>
+	
+    <input type="hidden" id="counter" value="0" />
+    <input type="hidden" id="clicked" value="" />
+    <div>
+        <input type='button' value='Create New List' class='createTodo_btn' id='createTodo_btn' />
+        <input type='text' value='' id='base_txt' />
+        <input type='button' value='Save' id='base_btn' class='hide' />
+    </div>
+    <div class='gen_buttons'>
+    </div>
+    <div id="dialog" title="Dialog Title" style="display: none;">
+        <div id="tasks">
+            <form id="form" action="#" method="POST">
+				<input type="text" placeholder="Add todo list item" />
+            </form>
+            <div class="items">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+* {
+	font-family: Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4em;
+  background: #eeeeee;
+  color: #333333;
+}
+h1{ font-size: 20px; margin: 0 0 20px 0}
+#wrapper{ margin:20px auto;width: 360px;}
+#dialog
+{
+    overflow: visible;
+}
+
+.todoWrapper .ui-widget-content{ background:#fff;}
+.todoWrapper .ui-widget{ font-size:14px}
+.todoWrapper .ui-widget-header{ background:#fff; border:0; border-bottom:1px solid #ccc; border-radius:0; color:#000;}
+.todoWrapper .ui-widget-header .ui-icon, .todoWrapper .ui-widget-header .ui-icon:hover,.todoWrapper .ui-widget-header .ui-icon:focus{
+background: url("../images/destroy.png") no-repeat ;display: block;
+    height: 20px;width: 52px; margin:0; border-radius:0; border:0;  }
+	
+.todoWrapper .ui-widget-header .ui-dialog-titlebar-close:hover{margin-top:-11px; background:none; border-radius:0; border:0;  }
+.todoWrapper .ui-dialog .ui-dialog-titlebar-close{ padding:0;margin-top:-11px; right:40px}
+
+
+#views {
+  width: 520px;
+  margin: 0 auto 40px auto;
+  background: white;
+  
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  
+  -moz-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+#tasks {
+  padding: 10px 20px;
+}
+
+#tasks h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 0 10px 0;
+}
+
+#tasks input[type="text"], #base_txt {
+  width: 270px;
+  font-size: 12px;
+  font-family: inherit;
+  line-height: 1.4em;
+  border: 0;
+  outline: none;
+  padding: 6px;
+  border: 1px solid #999999;
+  border-radius: 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+}
+
+#base_txt{ width:150px; margin-right:15px}
+
+#tasks input::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+#tasks .items {
+  margin: 10px 0;
+  list-style: none;
+}
+
+#tasks .item {
+  padding: 10px 10px 10px 0;
+  position: relative;
+  font-size: 14px;
+  border-bottom: 1px solid #cccccc;
+}
+#tasks .item  .view span { padding-left: 5px; }
+#tasks .item.done span {
+  color: #777777;
+  text-decoration: line-through;
+}
+
+#tasks .item .destroy {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  display: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: url(../images/trash.png) no-repeat center center;
+}
+
+#tasks .item:hover .destroy {
+  display: block;
+}
+
+#tasks .item .edit { display: none; }
+#tasks .item.editing .edit { display: block; }
+#tasks .item.editing .view { display: none; }
+
+#tasks footer {
+  display: block;
+  margin: 20px -20px -20px -20px;
+  overflow: hidden;
+  
+  color: #555555;
+  background: #f4fce8;
+  border-top: 1px solid #ededed;
+  padding: 0 20px;
+  line-height: 36px;
+  
+  -moz-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+#tasks .clear {
+  display: block;
+  float: right;
+  line-height: 20px;
+  text-decoration: none;
+  
+  background: rgba(0, 0, 0, 0.1);
+  color: #555555;
+  font-size: 11px;
+  margin-top: 8px;
+  padding: 0 10px 1px;
+  
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;
+  
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0 0; 
+  
+  cursor: pointer;
+}
+
+#tasks .clear:hover {
+  background: rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
+}
+
+#tasks .clear:active {
+  position: relative;
+  top: 1px;
+}
+
+#tasks .count span {
+  font-weight: bold;
+}
+
+.gen_buttons{ margin:10px 0; float:left}
+#base_btn, .gen_buttons input, #createTodo_btn[type="button"], .cancel{
+background: #fff;
+border: 0 none;
+border-radius: 0;
+border: 1px solid #067bb5;
+color: #067bb5;
+display: inline-block;
+font-size: 16px;
+padding: 3px 15px 5px;
+text-decoration: none;
+margin: 0 10px 10px 0;
+}
+
+.gen_buttons input{ padding: 15px 20px; border-radius:0; background: #067bb5; color: #fff; font-size:18px;}
